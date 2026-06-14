@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>슈크림 신발세탁소 창업 교육</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --teal:    #18b3b8;
+  --teal2:   #12969a;
+  --teal-lt: #e6f8f8;
+  --teal-md: #b2e8ea;
+  --black:   #111111;
+  --gray1:   #333333;
+  --gray2:   #555555;
+  --gray3:   #888888;
+  --gray4:   #cccccc;
+  --bg:      #ffffff;
+  --bg2:     #f5f7f7;
+  --bg3:     #edf8f8;
+  --radius:  8px;
+}
+html { scroll-behavior:smooth; }
+body { font-family:'Noto Sans KR',sans-serif; background:var(--bg); color:var(--black); line-height:1.7; overflow-x:hidden; }
+
+/* ── TOP BANNER ── */
+.top-banner {
+  background:var(--teal); color:#fff;
+  text-align:center; padding:10px 5vw;
+  font-size:0.82rem; font-weight:600; letter-spacing:0.04em;
+  position:fixed; top:0; left:0; right:0; z-index:200;
+}
+.top-banner span { opacity:0.85; margin:0 6px; }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:40px; left:0; right:0; z-index:100;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:0 5vw; height:64px;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1.5px solid #eeeeee;
+}
+.logo { font-size:1.1rem; font-weight:900; color:var(--black); letter-spacing:-0.01em; }
+.logo span { color:var(--teal); }
+.nav-btns { display:flex; gap:10px; align-items:center; }
+.nav-cta {
+  background:var(--teal); color:#fff;
+  border:none; border-radius:6px;
+  padding:10px 22px; font-size:0.82rem; font-weight:700;
+  cursor:pointer; font-family:inherit;
+  transition:background 0.18s,transform 0.15s;
+}
+.nav-cta:hover { background:var(--teal2); transform:translateY(-1px); }
+.nav-admin {
+  background:transparent; color:var(--gray3);
+  border:1.5px solid var(--gray4); border-radius:6px;
+  padding:9px 16px; font-size:0.78rem; font-weight:500;
+  cursor:pointer; font-family:inherit; transition:all 0.18s;
+}
+.nav-admin:hover { color:var(--teal); border-color:var(--teal); }
+
+/* ── HERO ── */
+.hero {
+  min-height:100vh;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:160px 5vw 80px;
+  background:var(--bg);
+  position:relative; overflow:hidden;
+}
+.hero::after {
+  content:'';
+  position:absolute; right:0; top:0; bottom:0; width:42%;
+  background:var(--teal-lt);
+  clip-path:polygon(12% 0,100% 0,100% 100%,0% 100%);
+  pointer-events:none; z-index:0;
+}
+.hero-inner { position:relative; z-index:1; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:7px;
+  background:var(--teal-lt); border:1.5px solid var(--teal-md);
+  color:var(--teal2); border-radius:40px;
+  padding:5px 16px; font-size:0.75rem; font-weight:700;
+  letter-spacing:0.05em; margin-bottom:28px;
+}
+.hero-badge::before { content:'●'; font-size:0.55rem; animation:blink 1.4s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.hero h1 {
+  font-size:clamp(2.4rem,5.5vw,4.6rem);
+  font-weight:900; line-height:1.15; color:var(--black);
+  margin-bottom:22px; max-width:700px; letter-spacing:-0.02em;
+}
+.hero h1 .accent { color:var(--teal); position:relative; }
+.hero h1 .accent::after {
+  content:''; position:absolute; left:0; bottom:2px; right:0;
+  height:4px; background:var(--teal-md); border-radius:2px; z-index:-1;
+}
+.hero-sub {
+  font-size:clamp(1rem,1.8vw,1.2rem); color:var(--gray2);
+  font-weight:400; margin-bottom:10px; max-width:520px;
+}
+.hero-desc {
+  font-size:0.96rem; color:var(--gray3);
+  max-width:480px; margin-bottom:44px; line-height:1.85;
+}
+.btn-primary {
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--teal); color:#fff;
+  border:none; border-radius:8px;
+  padding:16px 36px; font-size:1rem; font-weight:700;
+  cursor:pointer; font-family:inherit; text-decoration:none;
+  transition:background 0.18s,transform 0.15s,box-shadow 0.2s;
+  box-shadow:0 4px 20px rgba(24,179,184,0.25);
+}
+.btn-primary:hover { background:var(--teal2); transform:translateY(-2px); box-shadow:0 8px 32px rgba(24,179,184,0.35); }
+.btn-primary .arrow { transition:transform 0.18s; }
+.btn-primary:hover .arrow { transform:translateX(4px); }
+.hero-stats {
+  display:flex; gap:36px; margin-top:52px; flex-wrap:wrap;
+}
+.hero-stat { }
+.hero-stat strong { display:block; font-size:1.7rem; font-weight:900; color:var(--teal); line-height:1; margin-bottom:4px; }
+.hero-stat span { font-size:0.78rem; color:var(--gray3); font-weight:500; }
+
+/* ── DIVIDER ── */
+.divider { height:1px; background:#eeeeee; margin:0 5vw; }
+
+/* ── SECTIONS ── */
+section { padding:90px 5vw; }
+.section-badge {
+  display:inline-block; background:var(--teal-lt); color:var(--teal2);
+  font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase;
+  padding:4px 14px; border-radius:40px; margin-bottom:16px;
+}
+.section-title {
+  font-size:clamp(1.7rem,3.2vw,2.5rem);
+  font-weight:900; color:var(--black);
+  line-height:1.2; margin-bottom:16px; letter-spacing:-0.02em;
+}
+.section-title .accent { color:var(--teal); }
+.section-lead {
+  font-size:0.98rem; color:var(--gray2); max-width:560px;
+  line-height:1.85; margin-bottom:52px;
+}
+
+/* ── TRUST ── */
+.trust { background:var(--bg2); }
+.trust-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+.trust-card {
+  background:#fff; border-radius:12px;
+  padding:28px 24px;
+  border:1.5px solid #eeeeee;
+  transition:border-color 0.18s,transform 0.18s,box-shadow 0.18s;
+}
+.trust-card:hover { border-color:var(--teal-md); transform:translateY(-4px); box-shadow:0 8px 28px rgba(24,179,184,0.1); }
+.trust-check { color:var(--teal); font-size:1.3rem; margin-bottom:12px; display:block; }
+.trust-card p { font-size:0.9rem; color:var(--gray1); line-height:1.65; }
+.trust-card strong { color:var(--black); font-weight:700; }
+
+/* ── WHO ── */
+.who-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
+.who-card {
+  background:#fff; border-radius:12px; padding:26px 24px;
+  border-left:4px solid var(--teal);
+  box-shadow:0 2px 12px rgba(0,0,0,0.05);
+  transition:box-shadow 0.18s,transform 0.18s;
+}
+.who-card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(24,179,184,0.12); }
+.who-card h4 { font-size:0.9rem; font-weight:700; color:var(--teal2); margin-bottom:8px; }
+.who-card p { font-size:0.86rem; color:var(--gray2); line-height:1.6; }
+
+/* ── CURRICULUM ── */
+.curriculum { background:var(--bg2); }
+.curriculum-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:20px; }
+.step-card {
+  background:#fff; border-radius:12px; padding:28px 24px;
+  border:1.5px solid #eeeeee; position:relative; overflow:hidden;
+  transition:border-color 0.18s,transform 0.18s,box-shadow 0.18s;
+}
+.step-card:hover { border-color:var(--teal-md); transform:translateY(-4px); box-shadow:0 8px 28px rgba(24,179,184,0.1); }
+.step-num {
+  font-size:3.8rem; font-weight:900;
+  color:rgba(24,179,184,0.07);
+  position:absolute; top:8px; right:16px; line-height:1; pointer-events:none;
+}
+.step-label { font-size:0.67rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--teal); font-weight:700; margin-bottom:8px; }
+.step-title { font-size:1rem; font-weight:800; color:var(--black); margin-bottom:14px; }
+.step-list { list-style:none; }
+.step-list li {
+  font-size:0.84rem; color:var(--gray2);
+  padding:5px 0; border-bottom:1px solid #f0f0f0;
+  display:flex; align-items:center; gap:8px;
+}
+.step-list li:last-child { border-bottom:none; }
+.step-list li::before { content:'→'; color:var(--teal); font-size:0.72rem; }
+
+/* ── FORMAT ── */
+.format-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:20px; }
+.format-card {
+  text-align:center; background:#fff;
+  border-radius:14px; padding:40px 24px 32px;
+  border:1.5px solid #eeeeee;
+  transition:border-color 0.18s,transform 0.18s,box-shadow 0.18s;
+}
+.format-card:hover { border-color:var(--teal-md); transform:translateY(-4px); box-shadow:0 8px 28px rgba(24,179,184,0.1); }
+.format-icon-wrap {
+  width:60px; height:60px; border-radius:50%;
+  background:var(--teal-lt); display:flex; align-items:center; justify-content:center;
+  font-size:1.6rem; margin:0 auto 18px;
+}
+.format-card h4 { font-size:0.98rem; font-weight:800; color:var(--black); margin-bottom:10px; }
+.format-card p { font-size:0.84rem; color:var(--gray2); line-height:1.65; }
+
+/* ── MODELS ── */
+.models { background:var(--bg2); }
+.model-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(195px,1fr)); gap:18px; }
+.model-card {
+  background:#fff; border-radius:12px; padding:26px 20px;
+  border-top:4px solid var(--teal);
+  box-shadow:0 2px 12px rgba(0,0,0,0.04);
+  transition:transform 0.18s,box-shadow 0.18s;
+}
+.model-card:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(24,179,184,0.12); }
+.model-card h4 { font-size:0.93rem; font-weight:800; color:var(--black); margin-bottom:10px; }
+.model-card p { font-size:0.82rem; color:var(--gray2); line-height:1.6; }
+
+/* ── FOUNDER ── */
+.founder-inner { display:grid; grid-template-columns:1fr 1.8fr; gap:56px; align-items:center; }
+.founder-visual {
+  aspect-ratio:1/1.1; background:var(--bg2);
+  border-radius:16px; border:2px solid #eeeeee;
+  display:flex; align-items:center; justify-content:center;
+  font-size:5rem; overflow:hidden; position:relative;
+}
+.founder-tag {
+  display:inline-block;
+  background:var(--teal-lt); border:1.5px solid var(--teal-md);
+  color:var(--teal2); font-size:0.75rem; font-weight:700;
+  padding:5px 14px; border-radius:40px; margin-bottom:20px;
+}
+.founder-text p { font-size:0.93rem; color:var(--gray2); line-height:1.9; margin-bottom:14px; }
+.founder-text p strong { color:var(--black); font-weight:700; }
+
+/* ── FAQ ── */
+.faq { background:var(--bg2); }
+.faq-list { max-width:700px; }
+.faq-item {
+  background:#fff; border-radius:10px; margin-bottom:12px;
+  border:1.5px solid #eeeeee; overflow:hidden;
+  transition:border-color 0.18s;
+}
+.faq-item:hover { border-color:var(--teal-md); }
+.faq-q {
+  font-size:0.96rem; font-weight:700; color:var(--black);
+  padding:20px 24px; display:flex; align-items:flex-start; gap:12px; cursor:default;
+}
+.faq-q-badge {
+  background:var(--teal); color:#fff; font-size:0.68rem; font-weight:900;
+  padding:2px 8px; border-radius:4px; flex-shrink:0; margin-top:2px;
+}
+.faq-a {
+  font-size:0.87rem; color:var(--gray2); line-height:1.75;
+  padding:0 24px 20px 52px;
+}
+
+/* ── FINAL CTA ── */
+.final-cta {
+  background:var(--teal); color:#fff;
+  text-align:center; padding:100px 5vw;
+  position:relative; overflow:hidden;
+}
+.final-cta::before {
+  content:'';
+  position:absolute; top:-60px; right:-60px;
+  width:320px; height:320px; border-radius:50%;
+  background:rgba(255,255,255,0.06); pointer-events:none;
+}
+.final-cta::after {
+  content:'';
+  position:absolute; bottom:-80px; left:-40px;
+  width:240px; height:240px; border-radius:50%;
+  background:rgba(255,255,255,0.04); pointer-events:none;
+}
+.final-cta h2 {
+  font-size:clamp(1.8rem,4vw,3rem); font-weight:900;
+  color:#fff; line-height:1.25; margin-bottom:16px; letter-spacing:-0.02em;
+  position:relative; z-index:1;
+}
+.final-cta h2 .underline { text-decoration:underline; text-decoration-color:rgba(255,255,255,0.5); text-underline-offset:5px; }
+.final-cta p { font-size:1rem; color:rgba(255,255,255,0.8); margin-bottom:44px; line-height:1.8; position:relative; z-index:1; }
+.btn-white {
+  display:inline-flex; align-items:center; gap:10px;
+  background:#fff; color:var(--teal);
+  border:none; border-radius:8px;
+  padding:16px 36px; font-size:1rem; font-weight:800;
+  cursor:pointer; font-family:inherit; text-decoration:none;
+  transition:all 0.18s; position:relative; z-index:1;
+  box-shadow:0 4px 20px rgba(0,0,0,0.15);
+}
+.btn-white:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(0,0,0,0.2); }
+.btn-white .arrow { transition:transform 0.18s; }
+.btn-white:hover .arrow { transform:translateX(4px); }
+.btn-outline-white {
+  display:inline-flex; align-items:center; gap:10px;
+  background:transparent; color:#fff;
+  border:2px solid rgba(255,255,255,0.6); border-radius:8px;
+  padding:14px 30px; font-size:0.9rem; font-weight:700;
+  cursor:pointer; font-family:inherit; text-decoration:none;
+  transition:all 0.18s; position:relative; z-index:1;
+}
+.btn-outline-white:hover { background:rgba(255,255,255,0.12); border-color:#fff; }
+.cta-buttons { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+
+/* ── FOOTER ── */
+footer {
+  padding:32px 5vw; border-top:1.5px solid #eeeeee;
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:12px; background:#fff;
+}
+footer p { font-size:0.78rem; color:var(--gray3); }
+
+/* ── FADE ANIM ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+.fade-up { animation:fadeUp 0.65s ease both; }
+.delay-1{animation-delay:0.1s}.delay-2{animation-delay:0.22s}.delay-3{animation-delay:0.34s}.delay-4{animation-delay:0.46s}
+
+/* ══════════════════════
+   ADMIN OVERLAY
+══════════════════════ */
+.admin-overlay { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.55); backdrop-filter:blur(6px); align-items:center; justify-content:center; }
+.admin-overlay.open { display:flex; }
+
+/* LOGIN */
+.login-modal {
+  background:#fff; border-radius:16px; padding:48px 40px;
+  width:100%; max-width:360px; text-align:center; position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,0.18);
+}
+.login-modal h3 { font-size:1.2rem; font-weight:900; color:var(--black); margin-bottom:8px; }
+.login-modal p { font-size:0.82rem; color:var(--gray3); margin-bottom:28px; }
+.login-modal input[type=password] {
+  width:100%; background:var(--bg2); border:1.5px solid #dddddd;
+  border-radius:8px; padding:12px 16px; font-size:0.9rem; color:var(--black);
+  font-family:inherit; outline:none; margin-bottom:14px;
+}
+.login-modal input[type=password]:focus { border-color:var(--teal); }
+.login-modal .login-btn {
+  width:100%; background:var(--teal); color:#fff; border:none; border-radius:8px;
+  padding:13px; font-size:0.95rem; font-weight:700; cursor:pointer; font-family:inherit; transition:background 0.18s;
+}
+.login-modal .login-btn:hover { background:var(--teal2); }
+.login-modal .login-err { font-size:0.78rem; color:#e05c5c; margin-bottom:12px; min-height:18px; }
+.login-modal .close-x { position:absolute; top:16px; right:20px; background:none; border:none; color:var(--gray3); font-size:1.4rem; cursor:pointer; }
+
+/* ADMIN PANEL */
+.admin-panel {
+  display:none; background:#fff; border-radius:16px;
+  width:100%; max-width:880px; max-height:90vh;
+  overflow:hidden; flex-direction:column;
+  box-shadow:0 24px 80px rgba(0,0,0,0.18);
+}
+.admin-panel.show { display:flex; }
+.admin-header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 28px; border-bottom:1.5px solid #eeeeee; flex-shrink:0;
+  background:var(--bg2);
+}
+.admin-header h3 { font-size:1rem; font-weight:800; color:var(--black); }
+.admin-header-right { display:flex; gap:10px; align-items:center; }
+.admin-save-btn {
+  background:var(--teal); color:#fff; border:none; border-radius:6px;
+  padding:8px 20px; font-size:0.84rem; font-weight:700; cursor:pointer; font-family:inherit; transition:background 0.18s;
+}
+.admin-save-btn:hover { background:var(--teal2); }
+.admin-close { background:none; border:none; color:var(--gray3); font-size:1.5rem; cursor:pointer; }
+.admin-body { display:flex; flex:1; overflow:hidden; }
+.admin-sidebar { width:186px; border-right:1.5px solid #eeeeee; padding:14px 0; overflow-y:auto; flex-shrink:0; background:var(--bg2); }
+.admin-tab {
+  display:block; width:100%; background:none; border:none; text-align:left;
+  padding:11px 18px; font-size:0.81rem; color:var(--gray2); cursor:pointer;
+  font-family:inherit; transition:all 0.15s; border-left:3px solid transparent;
+}
+.admin-tab:hover { color:var(--black); background:rgba(0,0,0,0.03); }
+.admin-tab.active { color:var(--teal2); background:var(--teal-lt); border-left-color:var(--teal); font-weight:700; }
+.admin-content { flex:1; overflow-y:auto; padding:24px 28px; }
+.admin-section { display:none; }
+.admin-section.active { display:block; }
+.admin-group { margin-bottom:24px; }
+.admin-group label { display:block; font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal2); font-weight:700; margin-bottom:7px; }
+.admin-group input, .admin-group textarea {
+  width:100%; background:var(--bg2); border:1.5px solid #dddddd;
+  border-radius:7px; padding:9px 13px; font-size:0.87rem; color:var(--black);
+  font-family:inherit; outline:none; resize:vertical; transition:border-color 0.18s;
+}
+.admin-group input:focus, .admin-group textarea:focus { border-color:var(--teal); }
+.admin-group textarea { min-height:70px; }
+.admin-section-title { font-size:0.98rem; font-weight:800; color:var(--black); margin-bottom:20px; padding-bottom:10px; border-bottom:1.5px solid #eeeeee; }
+
+/* IMAGE UPLOAD */
+.img-upload-area {
+  border:2px dashed #cccccc; border-radius:10px; padding:22px 16px;
+  text-align:center; cursor:pointer; transition:border-color 0.18s,background 0.18s;
+  background:var(--bg2); margin-bottom:10px;
+}
+.img-upload-area:hover, .img-upload-area.drag-over { border-color:var(--teal); background:var(--teal-lt); }
+.img-upload-icon { font-size:1.8rem; margin-bottom:8px; }
+.img-upload-area p { font-size:0.8rem; color:var(--gray3); margin:0; }
+.img-upload-area span { font-size:0.72rem; color:var(--teal); }
+.img-preview-wrap { position:relative; display:inline-block; margin-top:10px; }
+.img-preview { max-width:100%; max-height:160px; border-radius:8px; border:1.5px solid #eeeeee; display:block; object-fit:cover; }
+.img-preview-del { position:absolute; top:-8px; right:-8px; background:#e05c5c; color:#fff; border:none; border-radius:50%; width:22px; height:22px; font-size:0.75rem; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+
+/* TOAST */
+.save-toast {
+  position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
+  background:var(--black); color:#fff; padding:12px 28px; border-radius:40px;
+  font-size:0.86rem; font-weight:600; opacity:0; transition:all 0.3s;
+  pointer-events:none; z-index:10000; white-space:nowrap;
+}
+.save-toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+@media(max-width:700px){
+  .hero::after { display:none; }
+  .founder-inner{grid-template-columns:1fr}
+  .founder-visual{max-width:220px;margin:0 auto}
+  .cta-buttons{flex-direction:column;align-items:center}
+  .admin-body{flex-direction:column}
+  .admin-sidebar{width:100%;border-right:none;border-bottom:1.5px solid #eee;display:flex;flex-wrap:wrap;padding:8px}
+  .admin-tab{width:auto;padding:7px 12px;border-left:none;border-bottom:2px solid transparent;font-size:0.75rem}
+  .admin-tab.active{border-left-color:transparent;border-bottom-color:var(--teal)}
+  .admin-panel{max-height:95vh}
+  .hero-stats{gap:24px}
+  nav{top:36px}
+  .top-banner{font-size:0.74rem;padding:8px 4vw}
+}
+@media(prefers-reduced-motion:reduce){.fade-up{animation:none}}
+</style>
+</head>
+<body>
+
+<!-- TOP BANNER -->
+<div class="top-banner">
+  🔥 선착순 마감 임박 <span>·</span> 지금 바로 무료 창업 상담 신청하세요 <span>·</span> 📞 현직 대표 직접 상담
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">슈크림 <span>신발세탁소</span></div>
+  <div class="nav-btns">
+    <button class="nav-admin" onclick="openAdmin()">⚙ 어드민</button>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">창업 상담 신청</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge fade-up">현직 매장 대표 직접 교육</div>
+    <h1 class="fade-up delay-1">
+      <span data-key="hero_h1_line1">신발세탁으로</span><br>
+      <span class="accent" data-key="hero_h1_line2">월급 이상의 수익</span>을<br>
+      <span data-key="hero_h1_line3">만드는 방법</span>
+    </h1>
+    <p class="hero-sub fade-up delay-2" data-key="hero_sub">실제 매장을 운영하는 대표가 직접 알려주는</p>
+    <p class="hero-desc fade-up delay-3" data-key="hero_desc">창업부터 기술 습득, 매장 운영, 마케팅까지<br>현장에서 검증된 노하우를 전수합니다.</p>
+    <div class="fade-up delay-4">
+      <a href="#contact" class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">
+        <span data-key="hero_btn">창업 상담 신청</span> <span class="arrow">→</span>
+      </a>
+    </div>
+    <div class="hero-stats fade-up delay-4">
+      <div class="hero-stat"><strong>6단계</strong><span>체계적 커리큘럼</span></div>
+      <div class="hero-stat"><strong>100%</strong><span>현장 실습 교육</span></div>
+      <div class="hero-stat"><strong>창업 후</strong><span>지속 멘토링 제공</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="section-badge" data-key="trust_eyebrow">Why us</div>
+  <h2 class="section-title" data-key="trust_title">왜 이 교육이 <span class="accent">특별</span>할까요?</h2>
+  <p class="section-lead" data-key="trust_lead">많은 창업 교육은 이론만 가르칩니다. 하지만 이 교육은 다릅니다.</p>
+  <div class="trust-grid">
+    <div class="trust-card"><span class="trust-check">✔</span><p><strong data-key="trust1_title">현재 운영 중인 실제 매장</strong><br><span data-key="trust1_desc">실제 현장에서 바로 쓸 수 있는 기술을 배웁니다.</span></p></div>
+    <div class="trust-card"><span class="trust-check">✔</span><p><strong data-key="trust2_title">실제 고객 응대 경험</strong><br><span data-key="trust2_desc">교과서가 아닌 살아있는 고객 서비스를 익힙니다.</span></p></div>
+    <div class="trust-card"><span class="trust-check">✔</span><p><strong data-key="trust3_title">실제 매출 데이터 기반</strong><br><span data-key="trust3_desc">검증된 수치로 가능성을 판단할 수 있습니다.</span></p></div>
+    <div class="trust-card"><span class="trust-check">✔</span><p><strong data-key="trust4_title">실제 창업생 멘토링</strong><br><span data-key="trust4_desc">먼저 창업한 선배들의 경험을 직접 들을 수 있습니다.</span></p></div>
+    <div class="trust-card"><span class="trust-check">✔</span><p><strong data-key="trust5_title">유튜브를 통한 공개 검증</strong><br><span data-key="trust5_desc">채널을 통해 투명하게 공개된 노하우를 확인하세요.</span></p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHO -->
+<section>
+  <div class="section-badge" data-key="who_eyebrow">이런 분들에게 추천합니다</div>
+  <h2 class="section-title" data-key="who_title">나에게 <span class="accent">맞는</span> 창업일까요?</h2>
+  <p class="section-lead" data-key="who_lead">다양한 상황에서 시작할 수 있는 유연한 창업 모델입니다.</p>
+  <div class="who-cards">
+    <div class="who-card"><h4 data-key="who1_title">소자본 창업을 찾는 분</h4><p data-key="who1_desc">적은 자본으로 시작할 수 있는 사업을 찾고 있다면</p></div>
+    <div class="who-card"><h4 data-key="who2_title">세탁소 매출을 늘리고 싶은 사장님</h4><p data-key="who2_desc">기존 세탁소에 신발세탁 서비스를 추가하고 싶다면</p></div>
+    <div class="who-card"><h4 data-key="who3_title">기술 창업을 원하는 분</h4><p data-key="who3_desc">기술을 배우고 평생 활용 가능한 사업을 만들고 싶다면</p></div>
+    <div class="who-card"><h4 data-key="who4_title">부업 또는 추가 수익을 원하는 분</h4><p data-key="who4_desc">수거·배달 시스템을 활용하여 확장하고 싶다면</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CURRICULUM -->
+<section class="curriculum">
+  <div class="section-badge" data-key="curr_eyebrow">교육 커리큘럼</div>
+  <h2 class="section-title" data-key="curr_title"><span class="accent">6단계</span> 실전 교육 과정</h2>
+  <p class="section-lead" data-key="curr_lead">기초부터 창업 준비, 마케팅, 운영 노하우까지 체계적으로 배웁니다.</p>
+  <div class="curriculum-grid">
+    <div class="step-card"><div class="step-num">01</div><div class="step-label">Step 1</div><div class="step-title" data-key="step1_title">신발세탁 기초</div><ul class="step-list"><li data-key="step1_i1">소재별 이해</li><li data-key="step1_i2">세탁 장비 사용법</li><li data-key="step1_i3">오염 제거 방법</li><li data-key="step1_i4">건조 방법</li></ul></div>
+    <div class="step-card"><div class="step-num">02</div><div class="step-label">Step 2</div><div class="step-title" data-key="step2_title">실전 기술 교육</div><ul class="step-list"><li data-key="step2_i1">운동화 세탁</li><li data-key="step2_i2">가죽 신발 세탁</li><li data-key="step2_i3">명품 신발 세탁</li><li data-key="step2_i4">스웨이드 관리</li><li data-key="step2_i5">황변 제거</li></ul></div>
+    <div class="step-card"><div class="step-num">03</div><div class="step-label">Step 3</div><div class="step-title" data-key="step3_title">수선 및 부가서비스</div><ul class="step-list"><li data-key="step3_i1">밑창 보강</li><li data-key="step3_i2">접착 작업</li><li data-key="step3_i3">염색 및 복원</li><li data-key="step3_i4">케어 서비스</li></ul></div>
+    <div class="step-card"><div class="step-num">04</div><div class="step-label">Step 4</div><div class="step-title" data-key="step4_title">창업 준비</div><ul class="step-list"><li data-key="step4_i1">사업자 등록</li><li data-key="step4_i2">상권 분석</li><li data-key="step4_i3">매장 세팅</li><li data-key="step4_i4">장비 선정</li></ul></div>
+    <div class="step-card"><div class="step-num">05</div><div class="step-label">Step 5</div><div class="step-title" data-key="step5_title">마케팅</div><ul class="step-list"><li data-key="step5_i1">네이버 플레이스 운영</li><li data-key="step5_i2">블로그 마케팅</li><li data-key="step5_i3">유튜브 활용</li><li data-key="step5_i4">SNS 운영</li></ul></div>
+    <div class="step-card"><div class="step-num">06</div><div class="step-label">Step 6</div><div class="step-title" data-key="step6_title">운영 노하우</div><ul class="step-list"><li data-key="step6_i1">고객 응대</li><li data-key="step6_i2">단골 관리</li><li data-key="step6_i3">가격 책정</li><li data-key="step6_i4">매출 관리</li></ul></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FORMAT -->
+<section>
+  <div class="section-badge" data-key="fmt_eyebrow">교육 진행 방식</div>
+  <h2 class="section-title" data-key="fmt_title">온·오프라인 <span class="accent">병행 교육</span></h2>
+  <p class="section-lead" data-key="fmt_lead">배움이 창업으로 이어질 수 있도록 단계별로 지원합니다.</p>
+  <div class="format-cards">
+    <div class="format-card"><div class="format-icon-wrap">🏪</div><h4 data-key="fmt1_title">오프라인 교육</h4><p data-key="fmt1_desc">실제 매장에서 직접 실습하며 현장 감각을 키웁니다.</p></div>
+    <div class="format-card"><div class="format-icon-wrap">💻</div><h4 data-key="fmt2_title">온라인 교육</h4><p data-key="fmt2_desc">교육 내용 복습 및 과제를 온라인으로 진행합니다.</p></div>
+    <div class="format-card"><div class="format-icon-wrap">🤝</div><h4 data-key="fmt3_title">창업 멘토링</h4><p data-key="fmt3_desc">창업 후에도 지속적인 피드백과 조언을 제공합니다.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MODELS -->
+<section class="models">
+  <div class="section-badge" data-key="model_eyebrow">실제 창업 후 가능한 모델</div>
+  <h2 class="section-title" data-key="model_title">당신에게 <span class="accent">맞는 방식</span>으로 시작하세요</h2>
+  <p class="section-lead" data-key="model_lead">하나의 기술로 다양한 형태의 사업이 가능합니다.</p>
+  <div class="model-cards">
+    <div class="model-card"><h4 data-key="model1_title">🏬 1인 매장 운영</h4><p data-key="model1_desc">혼자서도 운영 가능한 구조로 고정비를 최소화합니다.</p></div>
+    <div class="model-card"><h4 data-key="model2_title">🛵 수거배달 전문 모델</h4><p data-key="model2_desc">점포 없이 시작 가능한 초소자본 창업 방식입니다.</p></div>
+    <div class="model-card"><h4 data-key="model3_title">🧺 세탁소 부가서비스 모델</h4><p data-key="model3_desc">기존 세탁소 매출에 신발세탁 수익을 더합니다.</p></div>
+    <div class="model-card"><h4 data-key="model4_title">⭐ 신발세탁 전문점 모델</h4><p data-key="model4_desc">브랜드화 및 확장이 가능한 성장형 모델입니다.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOUNDER -->
+<section>
+  <div class="section-badge" data-key="founder_eyebrow">대표 소개</div>
+  <div class="founder-inner">
+    <div class="founder-visual" id="founderVisual" data-img-key="founder_photo">👟</div>
+    <div class="founder-text">
+      <div class="founder-tag" data-key="founder_tag">신발세탁 전문가 · 현직 매장 대표</div>
+      <h2 class="section-title" style="margin-bottom:22px" data-key="founder_title">실제 매장을 운영하는<br>신발세탁 전문가</h2>
+      <p data-key="founder_p1">수년간 신발세탁 및 명품 신발 케어 서비스를 운영하며 <strong>수많은 고객의 신발을 관리</strong>해 왔습니다.</p>
+      <p data-key="founder_p2">현재는 신발세탁 기술뿐 아니라 <strong>창업과 운영 노하우를 교육</strong>하고 있으며, 유튜브 채널을 통해 현장 경험을 공개적으로 공유하고 있습니다.</p>
+      <p data-key="founder_p3">이론이 아닌 <strong>현장에서 검증된 노하우</strong>를 그대로 전달합니다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-badge" data-key="faq_eyebrow">자주 묻는 질문</div>
+  <h2 class="section-title" data-key="faq_title">궁금한 점이 있으신가요?</h2>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q"><span class="faq-q-badge">Q</span><span data-key="faq1_q">초보자도 가능한가요?</span></div><div class="faq-a" data-key="faq1_a">가능합니다. 기초부터 단계별로 교육하기 때문에 전혀 경험이 없어도 따라올 수 있습니다.</div></div>
+    <div class="faq-item"><div class="faq-q"><span class="faq-q-badge">Q</span><span data-key="faq2_q">창업 경험이 없어도 되나요?</span></div><div class="faq-a" data-key="faq2_a">가능합니다. 사업자 등록부터 상권 분석, 매장 세팅까지 처음부터 함께 알려드립니다.</div></div>
+    <div class="faq-item"><div class="faq-q"><span class="faq-q-badge">Q</span><span data-key="faq3_q">교육 후 바로 창업 가능한가요?</span></div><div class="faq-a" data-key="faq3_a">교육 수준에 따라 충분히 가능합니다. 실전 중심으로 진행되기 때문에 교육 직후 적용할 수 있는 내용들을 다룹니다.</div></div>
+    <div class="faq-item"><div class="faq-q"><span class="faq-q-badge">Q</span><span data-key="faq4_q">창업 후에도 도움을 받을 수 있나요?</span></div><div class="faq-a" data-key="faq4_a">지속적인 멘토링을 제공합니다. 창업 이후에도 운영 중 생기는 질문에 함께 답해드립니다.</div></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="contact">
+  <h2><span data-key="cta_line1">기술은 사라지지 않습니다.</span><br><span class="underline" data-key="cta_line2">배우면 평생 사용할 수 있습니다.</span></h2>
+  <p data-key="cta_desc">신발세탁 창업이 궁금하다면 지금 상담을 신청하세요.<br>첫 상담은 무료로 진행됩니다.</p>
+  <div class="cta-buttons">
+    <a href="#" class="btn-white"><span data-key="cta_btn1">무료 창업 상담 신청</span> <span class="arrow">→</span></a>
+    <a href="#" class="btn-outline-white" data-key="cta_btn2">유튜브 채널 보러가기</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">슈크림 <span>신발세탁소</span></div>
+  <p data-key="footer_copy">© 2025 슈크림 신발세탁소 창업 교육. All rights reserved.</p>
+</footer>
+
+<!-- ══ ADMIN OVERLAY ══ -->
+<div class="admin-overlay" id="adminOverlay">
+
+  <!-- LOGIN -->
+  <div class="login-modal" id="loginModal">
+    <button class="close-x" onclick="closeAdmin()">✕</button>
+    <div style="font-size:2rem;margin-bottom:12px">🔐</div>
+    <h3>어드민 로그인</h3>
+    <p>비밀번호를 입력하여 접근하세요</p>
+    <div class="login-err" id="loginErr"></div>
+    <input type="password" id="pwInput" placeholder="비밀번호 입력" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="login-btn" onclick="doLogin()">로그인</button>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div class="admin-panel" id="adminPanel">
+    <div class="admin-header">
+      <h3>⚙ 문구 · 사진 편집</h3>
+      <div class="admin-header-right">
+        <button class="admin-save-btn" onclick="saveAll()">💾 저장하기</button>
+        <button class="admin-close" onclick="closeAdmin()">✕</button>
+      </div>
+    </div>
+    <div class="admin-body">
+      <nav class="admin-sidebar">
+        <button class="admin-tab active" onclick="switchTab('hero',this)">🏠 히어로</button>
+        <button class="admin-tab" onclick="switchTab('trust',this)">✅ 신뢰 섹션</button>
+        <button class="admin-tab" onclick="switchTab('who',this)">👥 추천 대상</button>
+        <button class="admin-tab" onclick="switchTab('curr',this)">📚 커리큘럼</button>
+        <button class="admin-tab" onclick="switchTab('fmt',this)">🎓 교육 방식</button>
+        <button class="admin-tab" onclick="switchTab('model',this)">🏪 창업 모델</button>
+        <button class="admin-tab" onclick="switchTab('founder',this)">👤 대표 소개</button>
+        <button class="admin-tab" onclick="switchTab('faq',this)">❓ FAQ</button>
+        <button class="admin-tab" onclick="switchTab('cta',this)">📣 CTA</button>
+        <button class="admin-tab" onclick="switchTab('images',this)">🖼 사진 관리</button>
+      </nav>
+      <div class="admin-content">
+
+        <!-- HERO -->
+        <div class="admin-section active" id="tab-hero">
+          <div class="admin-section-title">🏠 히어로 섹션</div>
+          <div class="admin-group"><label>헤드라인 1줄</label><input data-edit="hero_h1_line1"></div>
+          <div class="admin-group"><label>헤드라인 2줄 (포인트색)</label><input data-edit="hero_h1_line2"></div>
+          <div class="admin-group"><label>헤드라인 3줄</label><input data-edit="hero_h1_line3"></div>
+          <div class="admin-group"><label>서브 문구</label><input data-edit="hero_sub"></div>
+          <div class="admin-group"><label>설명 문구</label><textarea data-edit="hero_desc"></textarea></div>
+          <div class="admin-group"><label>버튼 텍스트</label><input data-edit="hero_btn"></div>
+        </div>
+
+        <!-- TRUST -->
+        <div class="admin-section" id="tab-trust">
+          <div class="admin-section-title">✅ 신뢰 섹션</div>
+          <div class="admin-group"><label>섹션 레이블</label><input data-edit="trust_eyebrow"></div>
+          <div class="admin-group"><label>제목</label><input data-edit="trust_title"></div>
+          <div class="admin-group"><label>설명</label><textarea data-edit="trust_lead"></textarea></div>
+          <div class="admin-group"><label>카드 1 제목</label><input data-edit="trust1_title"></div>
+          <div class="admin-group"><label>카드 1 설명</label><input data-edit="trust1_desc"></div>
+          <div class="admin-group"><label>카드 2 제목</label><input data-edit="trust2_title"></div>
+          <div class="admin-group"><label>카드 2 설명</label><input data-edit="trust2_desc"></div>
+          <div class="admin-group"><label>카드 3 제목</label><input data-edit="trust3_title"></div>
+          <div class="admin-group"><label>카드 3 설명</label><input data-edit="trust3_desc"></div>
+          <div class="admin-group"><label>카드 4 제목</label><input data-edit="trust4_title"></div>
+          <div class="admin-group"><label>카드 4 설명</label><input data-edit="trust4_desc"></div>
+          <div class="admin-group"><label>카드 5 제목</label><input data-edit="trust5_title"></div>
+          <div class="admin-group"><label>카드 5 설명</label><input data-edit="trust5_desc"></div>
+        </div>
+
+        <!-- WHO -->
+        <div class="admin-section" id="tab-who">
+          <div class="admin-section-title">👥 추천 대상</div>
+          <div class="admin-group"><label>섹션 레이블</label><input data-edit="who_eyebrow"></div>
+          <div class="admin-group"><label>제목</label><input data-edit="who_title"></div>
+          <div class="admin-group"><label>설명</label><input data-edit="who_lead"></div>
+          <div class="admin-group"><label>대상 1 제목</label><input data-edit="who1_title"></div>
+          <div class="admin-group"><label>대상 1 설명</label><input data-edit="who1_desc"></div>
+          <div class="admin-group"><label>대상 2 제목</label><input data-edit="who2_title"></div>
+          <div class="admin-group"><label>대상 2 설명</label><input data-edit="who2_desc"></div>
+          <div class="admin-group"><label>대상 3 제목</label><input data-edit="who3_title"></div>
+          <div class="admin-group"><label>대상 3 설명</label><input data-edit="who3_desc"></div>
+          <div class="admin-group"><label>대상 4 제목</label><input data-edit="who4_title"></div>
+          <div class="admin-group"><label>대상 4 설명</label><input data-edit="who4_desc"></div>
+        </div>
+
+        <!-- CURRICULUM -->
+        <div class="admin-section" id="tab-curr">
+          <div class="admin-section-title">📚 커리큘럼</div>
+          <div class="admin-group"><label>섹션 레이블</label><input data-edit="curr_eyebrow"></div>
+          <div class="admin-group"><label>제목</label><input data-edit="curr_title"></div>
+          <div class="admin-group"><label>설명</label><input data-edit="curr_lead"></div>
+          <div class="admin-group"><label>1단계 제목</label><input data-edit="step1_title"></div>
+          <div class="admin-group"><label>1단계 항목 1~4</label><input data-edit="step1_i1" style="margin-bottom:6px"><input data-edit="step1_i2" style="margin-bottom:6px"><input data-edit="step1_i3" style="margin-bottom:6px"><input data-edit="step1_i4"></div>
+          <div class="admin-group"><label>2단계 제목</label><input data-edit="step2_title"></div>
+          <div class="admin-group"><label>2단계 항목 1~5</label><input data-edit="step2_i1" style="margin-bottom:6px"><input data-edit="step2_i2" style="margin-bottom:6px"><input data-edit="step2_i3" style="margin-bottom:6px"><input data-edit="step2_i4" style="margin-bottom:6px"><input data-edit="step2_i5"></div>
+          <div class="admin-group"><label>3단계 제목</label><input data-edit="step3_title"></div>
+          <div class="admin-group"><label>3단계 항목 1~4</label><input data-edit="step3_i1" style="margin-bottom:6px"><input data-edit="step3_i2" style="margin-bottom:6px"><input data-edit="step3_i3" style="margin-bottom:6px"><input data-edit="step3_i4"></div>
+          <div class="admin-group"><label>4단계 제목</label><input data-edit="step4_title"></div>
+          <div class="admin-group"><label>4단계 항목 1~4</label><input data-edit="step4_i1" style="margin-bottom:6px"><input data-edit="step4_i2" style="margin-bottom:6px"><input data-edit="step4_i3" style="margin-bottom:6px"><input data-edit="step4_i4"></div>
+          <div class="admin-group"><label>5단계 제목</label><input data-edit="step5_title"></div>
+          <div class="admin-group"><label>5단계 항목 1~4</label><input data-edit="step5_i1" style="margin-bottom:6px"><input data-edit="step5_i2" style="margin-bottom:6px"><input data-edit="step5_i3" style="margin-bottom:6px"><input data-edit="step5_i4"></div>
+          <div class="admin-group"><label>6단계 제목</label><input data-edit="step6_title"></div>
+          <div class="admin-group"><label>6단계 항목 1~4</label><input data-edit="step6_i1" style="margin-bottom:6px"><input data-edit="step6_i2" style="margin-bottom:6px"><input data-edit="step6_i3" style="margin-bottom:6px"><input data-edit="step6_i4"></div>
+        </div>
+
+        <!-- FORMAT -->
+        <div class="admin-section" id="tab-fmt">
+          <div class="admin-section-title">🎓 교육 진행 방식</div>
+          <div class="admin-group"><label>섹션 레이블</label><input data-edit="fmt_eyebrow"></div>
+          <div class="admin-group"><label>제목</label><input data-edit="fmt_title"></div>
+          <div class="admin-group"><label>설명</label><input data-edit="fmt_lead"></div>
+          <div class="admin-group"><label>방식 1 제목</label><input data-edit="fmt1_title"></div>
+          <div class="admin-group"><label>방식 1 설명</label><input data-edit="fmt1_desc"></div>
+          <div class="admin-group"><label>방식 2 제목</label><input data-edit="fmt2_title"></div>
+          <div class="admin-group"><label>방식 2 설명</label><input data-edit="fmt2_desc"></div>
+          <div class="admin-group"><label>방식 3 제목</label><input data-edit="fmt3_title"></div>
+          <div class="admin-group"><label>방식 3 설명</label><input data-edit="fmt3_desc"></div>
+        </div>
+
+        <!-- MODEL -->
+        <div class="admin-section" id="tab-model">
+          <div class="admin-section-title">🏪 창업 모델</div>
+          <div class="admin-group"><label>섹션 레이블</label><input data-edit="model_eyebrow"></div>
+          <div class="admin-group"><label>제목</label><input data-edit="model_title"></div>
+          <div class="admin-group"><label>설명</label><input data-edit="model_lead"></div>
+          <div class="admin-group"><label>모델 1 제목</label><input data-edit="model1_title"></div>
+          <div class="admin-group"><label>모델 1 설명</label><input data-edit="model1_desc"></div>
+          <div class="admin-group"><label>모델 2 제목</label><input data-edit="model2_title"></div>
+          <div class="admin-group"><label>모델 2 설명</label><input data-edit="model2_desc"></div>
+          <div class="admin-group"><label>모델 3 제목</label><input data-edit="model3_title"></div>
+          <div class="admin-group"><label>모델 3 설명</label><input data-edit="model3_desc"></div>
+          <div class="admin-group"><label>모델 4 제목</label><input data-edit="model4_title"></div>
+          <div class="admin-group"><label>모델 4 설명</label><input data-edit="model4_desc"></div>
+        </div>
+
+        <!-- FOUNDER -->
+        <div class="admin-section" id="tab-founder">
+          <div class="admin-section-title">👤 대표 소개</div>
+          <div class="admin-group"><label>섹션 레이블</label><input data-edit="founder_eyebrow"></div>
+          <div class="admin-group"><label>태그 문구</label><input data-edit="founder_tag"></div>
+          <div class="admin-group"><label>제목</label><textarea data-edit="founder_title"></textarea></div>
+          <div class="admin-group"><label>본문 1</label><textarea data-edit="founder_p1"></textarea></div>
+          <div class="admin-group"><label>본문 2</label><textarea data-edit="founder_p2"></textarea></div>
+          <div class="admin-group"><label>본문 3</label><textarea data-edit="founder_p3"></textarea></div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="admin-section" id="tab-faq">
+          <div class="admin-section-title">❓ 자주 묻는 질문</div>
+          <div class="admin-group"><label>섹션 레이블</label><input data-edit="faq_eyebrow"></div>
+          <div class="admin-group"><label>제목</label><input data-edit="faq_title"></div>
+          <div class="admin-group"><label>Q1 질문</label><input data-edit="faq1_q"></div>
+          <div class="admin-group"><label>Q1 답변</label><textarea data-edit="faq1_a"></textarea></div>
+          <div class="admin-group"><label>Q2 질문</label><input data-edit="faq2_q"></div>
+          <div class="admin-group"><label>Q2 답변</label><textarea data-edit="faq2_a"></textarea></div>
+          <div class="admin-group"><label>Q3 질문</label><input data-edit="faq3_q"></div>
+          <div class="admin-group"><label>Q3 답변</label><textarea data-edit="faq3_a"></textarea></div>
+          <div class="admin-group"><label>Q4 질문</label><input data-edit="faq4_q"></div>
+          <div class="admin-group"><label>Q4 답변</label><textarea data-edit="faq4_a"></textarea></div>
+        </div>
+
+        <!-- CTA -->
+        <div class="admin-section" id="tab-cta">
+          <div class="admin-section-title">📣 마지막 CTA</div>
+          <div class="admin-group"><label>헤드라인 1줄</label><input data-edit="cta_line1"></div>
+          <div class="admin-group"><label>헤드라인 2줄 (밑줄)</label><input data-edit="cta_line2"></div>
+          <div class="admin-group"><label>설명 문구</label><textarea data-edit="cta_desc"></textarea></div>
+          <div class="admin-group"><label>버튼 1 텍스트</label><input data-edit="cta_btn1"></div>
+          <div class="admin-group"><label>버튼 2 텍스트</label><input data-edit="cta_btn2"></div>
+          <div class="admin-group"><label>푸터 저작권 문구</label><input data-edit="footer_copy"></div>
+        </div>
+
+        <!-- IMAGES -->
+        <div class="admin-section" id="tab-images">
+          <div class="admin-section-title">🖼 사진 관리</div>
+          <div class="admin-group">
+            <label style="display:block;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal2);font-weight:700;margin-bottom:8px">대표 소개 사진</label>
+            <div class="img-upload-area" id="drop-founder_photo" onclick="document.getElementById('file-founder_photo').click()" ondragover="handleDragOver(event,'founder_photo')" ondragleave="handleDragLeave(event,'founder_photo')" ondrop="handleDrop(event,'founder_photo')">
+              <div class="img-upload-icon">📷</div>
+              <p>클릭하거나 이미지를 드래그하세요</p>
+              <span>JPG, PNG, WEBP · 최대 5MB</span>
+            </div>
+            <input type="file" id="file-founder_photo" accept="image/*" style="display:none" onchange="handleFileInput(event,'founder_photo')">
+            <div id="preview-founder_photo"></div>
+          </div>
+          <div class="admin-group">
+            <label style="display:block;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal2);font-weight:700;margin-bottom:8px">히어로 배경 이미지 (선택)</label>
+            <div class="img-upload-area" id="drop-hero_bg" onclick="document.getElementById('file-hero_bg').click()" ondragover="handleDragOver(event,'hero_bg')" ondragleave="handleDragLeave(event,'hero_bg')" ondrop="handleDrop(event,'hero_bg')">
+              <div class="img-upload-icon">🌅</div>
+              <p>클릭하거나 이미지를 드래그하세요</p>
+              <span>JPG, PNG, WEBP · 최대 5MB</span>
+            </div>
+            <input type="file" id="file-hero_bg" accept="image/*" style="display:none" onchange="handleFileInput(event,'hero_bg')">
+            <div id="preview-hero_bg"></div>
+          </div>
+          <div class="admin-group">
+            <label style="display:block;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal2);font-weight:700;margin-bottom:8px">갤러리 이미지 1</label>
+            <div class="img-upload-area" id="drop-gallery1" onclick="document.getElementById('file-gallery1').click()" ondragover="handleDragOver(event,'gallery1')" ondragleave="handleDragLeave(event,'gallery1')" ondrop="handleDrop(event,'gallery1')">
+              <div class="img-upload-icon">🖼</div>
+              <p>클릭하거나 이미지를 드래그하세요</p>
+              <span>JPG, PNG, WEBP · 최대 5MB</span>
+            </div>
+            <input type="file" id="file-gallery1" accept="image/*" style="display:none" onchange="handleFileInput(event,'gallery1')">
+            <div id="preview-gallery1"></div>
+          </div>
+          <div class="admin-group">
+            <label style="display:block;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal2);font-weight:700;margin-bottom:8px">갤러리 이미지 2</label>
+            <div class="img-upload-area" id="drop-gallery2" onclick="document.getElementById('file-gallery2').click()" ondragover="handleDragOver(event,'gallery2')" ondragleave="handleDragLeave(event,'gallery2')" ondrop="handleDrop(event,'gallery2')">
+              <div class="img-upload-icon">🖼</div>
+              <p>클릭하거나 이미지를 드래그하세요</p>
+              <span>JPG, PNG, WEBP · 최대 5MB</span>
+            </div>
+            <input type="file" id="file-gallery2" accept="image/*" style="display:none" onchange="handleFileInput(event,'gallery2')">
+            <div id="preview-gallery2"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="save-toast" id="saveToast"></div>
+
+<script>
+const ADMIN_PW = '1234';
+const IMG_KEYS = ['founder_photo','hero_bg','gallery1','gallery2'];
+
+function openAdmin() {
+  document.getElementById('adminOverlay').classList.add('open');
+  document.getElementById('loginModal').style.display='';
+  document.getElementById('adminPanel').classList.remove('show');
+  document.getElementById('pwInput').value='';
+  document.getElementById('loginErr').textContent='';
+  setTimeout(()=>document.getElementById('pwInput').focus(),100);
+}
+function closeAdmin() { document.getElementById('adminOverlay').classList.remove('open'); }
+function doLogin() {
+  if(document.getElementById('pwInput').value===ADMIN_PW){
+    document.getElementById('loginModal').style.display='none';
+    document.getElementById('adminPanel').classList.add('show');
+    loadEditors(); loadImagePreviews();
+  } else {
+    document.getElementById('loginErr').textContent='비밀번호가 올바르지 않습니다.';
+    document.getElementById('pwInput').value='';
+    document.getElementById('pwInput').focus();
+  }
+}
+document.getElementById('adminOverlay').addEventListener('click',function(e){if(e.target===this)closeAdmin();});
+
+function switchTab(name,btn){
+  document.querySelectorAll('.admin-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+}
+
+function loadEditors(){
+  const saved=JSON.parse(localStorage.getItem('shucream_content')||'{}');
+  document.querySelectorAll('[data-edit]').forEach(inp=>{
+    const k=inp.getAttribute('data-edit');
+    const el=document.querySelector('[data-key="'+k+'"]');
+    inp.value=saved[k]!==undefined?saved[k]:(el?el.textContent.trim():'');
+  });
+}
+function saveAll(){
+  const data=JSON.parse(localStorage.getItem('shucream_content')||'{}');
+  document.querySelectorAll('[data-edit]').forEach(inp=>{
+    const k=inp.getAttribute('data-edit');
+    data[k]=inp.value;
+    document.querySelectorAll('[data-key="'+k+'"]').forEach(el=>{el.textContent=inp.value;});
+  });
+  localStorage.setItem('shucream_content',JSON.stringify(data));
+  showToast('✅ 변경사항이 저장되었습니다');
+}
+
+function handleDragOver(e,key){e.preventDefault();document.getElementById('drop-'+key).classList.add('drag-over');}
+function handleDragLeave(e,key){document.getElementById('drop-'+key).classList.remove('drag-over');}
+function handleDrop(e,key){e.preventDefault();document.getElementById('drop-'+key).classList.remove('drag-over');const f=e.dataTransfer.files[0];if(f)processImage(f,key);}
+function handleFileInput(e,key){const f=e.target.files[0];if(f)processImage(f,key);}
+function processImage(file,key){
+  if(!file.type.startsWith('image/')){showToast('⚠ 이미지 파일만 업로드 가능합니다');return;}
+  if(file.size>5*1024*1024){showToast('⚠ 5MB 이하만 업로드 가능합니다');return;}
+  const r=new FileReader();
+  r.onload=function(e){
+    const d=e.target.result;
+    const imgs=JSON.parse(localStorage.getItem('shucream_images')||'{}');
+    imgs[key]=d; localStorage.setItem('shucream_images',JSON.stringify(imgs));
+    renderPreview(key,d); applyImageToPage(key,d);
+    showToast('🖼 이미지가 업로드되었습니다');
+  };
+  r.readAsDataURL(file);
+}
+function deleteImage(key){
+  const imgs=JSON.parse(localStorage.getItem('shucream_images')||'{}');
+  delete imgs[key]; localStorage.setItem('shucream_images',JSON.stringify(imgs));
+  document.getElementById('preview-'+key).innerHTML='';
+  document.getElementById('file-'+key).value='';
+  revertImageOnPage(key); showToast('🗑 이미지가 삭제되었습니다');
+}
+function renderPreview(key,d){
+  document.getElementById('preview-'+key).innerHTML='<div class="img-preview-wrap"><img class="img-preview" src="'+d+'"><button class="img-preview-del" onclick="deleteImage(\''+key+'\')">✕</button></div>';
+}
+function loadImagePreviews(){
+  const imgs=JSON.parse(localStorage.getItem('shucream_images')||'{}');
+  IMG_KEYS.forEach(k=>{if(imgs[k])renderPreview(k,imgs[k]);});
+}
+function applyImageToPage(key,d){
+  if(key==='founder_photo'){const el=document.getElementById('founderVisual');if(el)el.innerHTML='<img src="'+d+'" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">';}
+  if(key==='hero_bg'){const h=document.querySelector('.hero');h.style.backgroundImage='url('+d+')';h.style.backgroundSize='cover';h.style.backgroundPosition='center';}
+}
+function revertImageOnPage(key){
+  if(key==='founder_photo'){const el=document.getElementById('founderVisual');if(el)el.innerHTML='👟';}
+  if(key==='hero_bg'){const h=document.querySelector('.hero');h.style.backgroundImage='';}
+}
+
+(function applyAll(){
+  const saved=JSON.parse(localStorage.getItem('shucream_content')||'{}');
+  Object.keys(saved).forEach(k=>{document.querySelectorAll('[data-key="'+k+'"]').forEach(el=>{el.textContent=saved[k];});});
+  const imgs=JSON.parse(localStorage.getItem('shucream_images')||'{}');
+  IMG_KEYS.forEach(k=>{if(imgs[k])applyImageToPage(k,imgs[k]);});
+})();
+
+function showToast(msg){
+  const t=document.getElementById('saveToast');
+  t.textContent=msg||'✅ 저장되었습니다';
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(el=>{if(el.isIntersecting){el.target.style.opacity='1';el.target.style.transform='translateY(0)';}});
+},{threshold:0.1});
+document.querySelectorAll('.trust-card,.who-card,.step-card,.format-card,.model-card,.faq-item').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(18px)';
+  el.style.transition='opacity 0.5s ease,transform 0.5s ease';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
